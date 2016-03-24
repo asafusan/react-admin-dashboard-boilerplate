@@ -1,0 +1,48 @@
+@import '../../common/style/colors';
+@import '../../common/style/variables';
+
+.dropdown-list {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .select {
+    display: flex;
+    align-items: center;
+
+    *:not(:last-child) {
+      margin-right: 8px;
+    }
+
+  }
+
+  .options {
+    padding: 4px;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: $ddl-options-bg-color;
+    border: 1px solid $ddl-options-border-color;
+    border-radius: 2px;
+    color: $ddl-options-font-color;
+    box-shadow: 3px 3px 4px lighten($ddl-options-bg-color, 50%);
+
+    &.show {
+      display: block;
+    }
+
+    > span {
+      display: block;
+      padding: 4px;
+
+      &:not(:first-child) {
+        border-top: 1px solid lighten($ddl-options-border-color, 20%);
+      }
+    }
+  }
+}
